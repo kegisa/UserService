@@ -1,6 +1,7 @@
 package com.victorlevin.StockService.service;
 
 import com.victorlevin.StockService.domain.Stock;
+import com.victorlevin.StockService.domain.Type;
 import com.victorlevin.StockService.dto.StockCreateDTO;
 import com.victorlevin.StockService.exception.StockAlreadyExistException;
 import com.victorlevin.StockService.exception.StockNotFoundException;
@@ -11,7 +12,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
+import
 
 @Service
 @RequiredArgsConstructor
@@ -28,7 +29,7 @@ public class StockService {
                 stockCreateDTO.getFigi(),
                 stockCreateDTO.getCurrency(),
                 stockCreateDTO.getName(),
-                stockCreateDTO.getType());
+                Type.valueOf(stockCreateDTO.getType()));
 
         stockRepository.save(stock);
     }
@@ -43,5 +44,9 @@ public class StockService {
 
     public List<Stock> getAllStocks() {
         return stockRepository.findAll();
+    }
+
+    public List<Stock> getStocksByTickers(List<String> tickers) {
+        return stockRepository.findByTickerIn(tickers);
     }
 }
