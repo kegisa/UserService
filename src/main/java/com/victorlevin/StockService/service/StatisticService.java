@@ -7,7 +7,6 @@ import com.victorlevin.StockService.domain.User;
 import com.victorlevin.StockService.dto.ClassDto;
 import com.victorlevin.StockService.dto.ClassValue;
 import lombok.RequiredArgsConstructor;
-import org.springframework.data.annotation.Id;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
