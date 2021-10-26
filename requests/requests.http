@@ -62,3 +62,9 @@ http://localhost:8080/users/2
 
 ###
 http://localhost:8080/statistic/classes/2
+
+###
+DELETE http://localhost:8080/stocks/afwaf
+
+###
+http://localhost:8080/stocks/
