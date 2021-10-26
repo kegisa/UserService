@@ -2,16 +2,20 @@ POST http://localhost:8080/users
 Content-Type: application/json
 
 {
-  "id" : "1",
-  "name" : "Roma Ermin",
+  "id" : "2",
+  "name" : "Victor Levin",
   "portfolio" : [
     {
       "ticker" : "FXCN",
-      "quantity" : 4
+      "quantity" : 1
     },
     {
       "ticker" : "SBSP",
-      "quantity" : 120
+      "quantity" : 1
+    },
+    {
+      "ticker" : "YNDX",
+      "quantity" : 1
     }
   ]
 }
@@ -32,6 +36,17 @@ POST http://localhost:8080/stocks
 Content-Type: application/json
 
 {
+  "ticker" : "YNDX",
+  "name" : "Yandex",
+  "type" : "STOCK",
+  "figi" : "14323r23r35",
+  "currency" : "RUB"
+}
+###
+POST http://localhost:8080/stocks
+Content-Type: application/json
+
+{
   "ticker" : "SBSP",
   "name" : "Top 500 stocks of USA",
   "type" : "ETF",
@@ -40,7 +55,10 @@ Content-Type: application/json
 }
 
 ###
-http://localhost:8080/stocks/FXCN
+http://localhost:8080/stocks/FXC
 
 ###
-http://localhost:8080/users/1
+http://localhost:8080/users/2
+
+###
+http://localhost:8080/statistic/classes/2

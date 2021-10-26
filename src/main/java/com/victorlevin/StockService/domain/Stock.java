@@ -13,9 +13,9 @@ public class Stock {
     private String figi;
     private String currency;
     private String name;
-    private String type;
+    private Type type;
 
-    public Stock(String ticker, String figi, String currency, String name, String type) {
+    public Stock(String ticker, String figi, String currency, String name, Type type) {
         this.ticker = ticker;
         this.figi = figi;
         this.currency = currency;
