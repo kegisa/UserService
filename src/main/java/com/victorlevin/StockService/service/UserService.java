@@ -3,6 +3,7 @@ package com.victorlevin.StockService.service;
 import com.victorlevin.StockService.domain.User;
 import com.victorlevin.StockService.dto.UserDtoCreate;
 import com.victorlevin.StockService.exception.UserAlreadyExistException;
+import com.victorlevin.StockService.exception.UserNotFoundException;
 import com.victorlevin.StockService.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -23,5 +24,9 @@ public class UserService {
                 userDtoCreate.getPortfolio());
 
         userRepository.save(user);
+    }
+
+    public User getUserById(String id) {
+        return userRepository.findById(id).orElseThrow(() -> new UserNotFoundException("User not found. Try another Id."));
     }
 }

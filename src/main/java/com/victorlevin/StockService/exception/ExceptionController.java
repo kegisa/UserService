@@ -11,7 +11,12 @@ import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExcep
 @ControllerAdvice
 public class ExceptionController extends ResponseEntityExceptionHandler {
     @ExceptionHandler({ StockAlreadyExistException.class, UserAlreadyExistException.class})
-    public ResponseEntity<ErrorDto> handle(Exception ex, WebRequest request) throws Exception {
+    public ResponseEntity<ErrorDto> handle(Exception ex) {
         return new ResponseEntity<ErrorDto>(new ErrorDto(ex.getLocalizedMessage()), HttpStatus.BAD_REQUEST);
+    }
+
+    @ExceptionHandler({UserNotFoundException.class})
+    public ResponseEntity<ErrorDto> handleNotFound(Exception ex) {
+        return new ResponseEntity<ErrorDto>(new ErrorDto(ex.getLocalizedMessage()), HttpStatus.NOT_FOUND);
     }
 }

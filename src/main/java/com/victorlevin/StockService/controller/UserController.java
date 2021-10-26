@@ -1,9 +1,12 @@
 package com.victorlevin.StockService.controller;
 
+import com.victorlevin.StockService.domain.User;
 import com.victorlevin.StockService.dto.UserDtoCreate;
 import com.victorlevin.StockService.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
+
+import javax.websocket.server.PathParam;
 
 @RestController
 @RequiredArgsConstructor
@@ -18,5 +21,7 @@ public class UserController {
     }
 
     @GetMapping("/{id}")
-    public
+    public User getUserById(@PathVariable String id) {
+        return userService.getUserById(id);
+    }
 }
