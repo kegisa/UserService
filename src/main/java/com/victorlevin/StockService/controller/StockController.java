@@ -4,10 +4,12 @@ import com.victorlevin.StockService.domain.Stock;
 import com.victorlevin.StockService.dto.StockCreateDTO;
 import com.victorlevin.StockService.service.StockService;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@Slf4j
 @RestController
 @RequestMapping("/stocks")
 @RequiredArgsConstructor
@@ -33,6 +35,7 @@ public class StockController {
 
     @GetMapping
     public List<Stock> getAllStocks() {
+        log.info("Getting all stocks");
         return stockService.getAllStocks();
     }
 }

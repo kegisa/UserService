@@ -55,7 +55,7 @@ Content-Type: application/json
 }
 
 ###
-http://localhost:8080/stocks/FXC
+http://localhost:8080/stocks/SBSP
 
 ###
 http://localhost:8080/users/2

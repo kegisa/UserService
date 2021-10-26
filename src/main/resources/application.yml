@@ -4,3 +4,7 @@ spring:
       database: TestDB
       port: 27018
       host: localhost
+
+logging:
+  file:
+    path: logs/StockService.log
