@@ -6,6 +6,9 @@ import com.victorlevin.StockService.service.StockService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+import java.util.Optional;
+
 @RestController
 @RequestMapping("/stocks")
 @RequiredArgsConstructor
@@ -22,5 +25,15 @@ public class StockController {
     public StockCreateDTO createStock(@RequestBody StockCreateDTO stockDto) {
         stockService.createStock(stockDto);
         return stockDto;
+    }
+
+    @DeleteMapping("/{ticker}")
+    public void deleteStockByTicker(@PathVariable String ticker) {
+        stockService.deleteStockByTicker(ticker);
+    }
+
+    @GetMapping
+    public List<Stock> getAllStocks() {
+        return stockService.getAllStocks();
     }
 }

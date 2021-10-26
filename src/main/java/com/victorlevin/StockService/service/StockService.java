@@ -3,19 +3,20 @@ package com.victorlevin.StockService.service;
 import com.victorlevin.StockService.domain.Stock;
 import com.victorlevin.StockService.dto.StockCreateDTO;
 import com.victorlevin.StockService.exception.StockAlreadyExistException;
+import com.victorlevin.StockService.exception.StockNotFoundException;
+import com.victorlevin.StockService.exception.UserNotFoundException;
 import com.victorlevin.StockService.repository.StockRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
 public class StockService {
     private final StockRepository stockRepository;
-
-    public Stock getStockByTicker(String ticker) {
-        Stock stock =  stockRepository.findByTicker(ticker);
-        return stock;
-    }
 
     public void createStock(StockCreateDTO stockCreateDTO) {
 
@@ -30,5 +31,17 @@ public class StockService {
                 stockCreateDTO.getType());
 
         stockRepository.save(stock);
+    }
+
+    public Stock getStockByTicker(String ticker) {
+        return stockRepository.findByTicker(ticker).orElseThrow(() -> new StockNotFoundException("Stock not found. Try another ticker."));
+    }
+
+    public void deleteStockByTicker(String ticker) {
+        stockRepository.deleteStockByTicker(ticker).orElseThrow(() -> new StockNotFoundException("Stock not found."));
+    }
+
+    public List<Stock> getAllStocks() {
+        return stockRepository.findAll();
     }
 }

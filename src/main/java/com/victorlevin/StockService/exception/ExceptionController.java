@@ -15,7 +15,7 @@ public class ExceptionController extends ResponseEntityExceptionHandler {
         return new ResponseEntity<ErrorDto>(new ErrorDto(ex.getLocalizedMessage()), HttpStatus.BAD_REQUEST);
     }
 
-    @ExceptionHandler({UserNotFoundException.class})
+    @ExceptionHandler({UserNotFoundException.class, StockNotFoundException.class})
     public ResponseEntity<ErrorDto> handleNotFound(Exception ex) {
         return new ResponseEntity<ErrorDto>(new ErrorDto(ex.getLocalizedMessage()), HttpStatus.NOT_FOUND);
     }

@@ -6,7 +6,6 @@ import com.victorlevin.StockService.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
-import javax.websocket.server.PathParam;
 
 @RestController
 @RequiredArgsConstructor
