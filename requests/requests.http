@@ -1,0 +1,43 @@
+POST http://localhost:8080/users
+Content-Type: application/json
+
+{
+  "id" : "1",
+  "name" : "Roma Ermin",
+  "portfolio" : [
+    {
+      "ticker" : "FXCN",
+      "quantity" : 4
+    },
+    {
+      "ticker" : "SBSP",
+      "quantity" : 120
+    }
+  ]
+}
+###
+POST http://localhost:8080/stocks
+Content-Type: application/json
+
+{
+  "ticker" : "FXCN",
+  "name" : "Акции Китая",
+  "type" : "ETF",
+  "figi" : "14323r23r23r",
+  "currency" : "RUB"
+}
+###
+POST http://localhost:8080/stocks
+Content-Type: application/json
+
+{
+  "ticker" : "SBSP",
+  "name" : "Top 500 stocks of USA",
+  "type" : "ETF",
+  "figi" : "14323r23r232542",
+  "currency" : "RUB"
+}
+
+###
+http://localhost:8080/stocks/FXCN
+
