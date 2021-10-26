@@ -8,3 +8,7 @@ spring:
 logging:
   file:
     path: logs/StockService.log
+  level:
+    org.springframework.data.mongodb.core: DEBUG
+
+

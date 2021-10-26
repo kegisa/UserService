@@ -1,0 +1,13 @@
+{
+  "user_id": "2",
+  "classes": [
+    {
+      "classActive": "STOCK",
+      "value": 0.625
+    },
+    {
+      "classActive": "ETF",
+      "value": 0.375
+    }
+  ]
+}

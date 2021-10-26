@@ -1,0 +1,499 @@
+GET http://localhost:8080/statistic/classes/2
+
+<> 2021-10-26T235245.200.json
+
+###
+
+GET http://localhost:8080/stocks/
+
+<> 2021-10-26T235230.200.json
+
+###
+
+GET http://localhost:8080/statistic/classes/2
+
+<> 2021-10-26T235156.200.json
+
+###
+
+GET http://localhost:8080/users/2
+
+<> 2021-10-26T235148.200.json
+
+###
+
+GET http://localhost:8080/stocks/
+
+<> 2021-10-26T235128.200.json
+
+###
+
+GET http://localhost:8080/stocks/
+
+<> 2021-10-26T235107.200.json
+
+###
+
+GET http://localhost:8080/stocks/
+
+<> 2021-10-26T235020.200.json
+
+###
+
+GET http://localhost:8080/stocks/SBSP
+
+<> 2021-10-26T235011.200.json
+
+###
+
+GET http://localhost:8080/users/2
+
+<> 2021-10-26T235002.200.json
+
+###
+
+GET http://localhost:8080/stocks/
+
+<> 2021-10-26T234942.200.json
+
+###
+
+GET http://localhost:8080/statistic/classes/2
+
+<> 2021-10-26T234930.200.json
+
+###
+
+GET http://localhost:8080/stocks/
+
+<> 2021-10-26T234835.200.json
+
+###
+
+GET http://localhost:8080/stocks/
+
+<> 2021-10-26T234730.200.json
+
+###
+
+GET http://localhost:8080/users/2
+
+<> 2021-10-26T233947.200.json
+
+###
+
+GET http://localhost:8080/statistic/classes/2
+
+<> 2021-10-26T233858.200.json
+
+###
+
+GET http://localhost:8080/stocks/
+
+<> 2021-10-26T233826.200.json
+
+###
+
+GET http://localhost:8080/stocks/
+
+<> 2021-10-26T232356.200.json
+
+###
+
+GET http://localhost:8080/stocks/
+
+<> 2021-10-26T232044.200.json
+
+###
+
+GET http://localhost:8080/stocks/
+
+<> 2021-10-26T230746.200.json
+
+###
+
+GET http://localhost:8080/statistic/classes/2
+
+<> 2021-10-26T220126.200.json
+
+###
+
+POST http://localhost:8080/users
+Content-Type: application/json
+
+{
+  "id" : "2",
+  "name" : "Victor Levin",
+  "portfolio" : [
+    {
+      "ticker" : "FXCN",
+      "quantity" : 1
+    },
+    {
+      "ticker" : "SBSP",
+      "quantity" : 1
+    },
+    {
+      "ticker" : "YNDX",
+      "quantity" : 1
+    }
+  ]
+}
+
+<> 2021-10-26T220114.200.json
+
+###
+
+POST http://localhost:8080/stocks
+Content-Type: application/json
+
+{
+  "ticker" : "SBSP",
+  "name" : "Top 500 stocks of USA",
+  "type" : "ETF",
+  "figi" : "14323r23r232542",
+  "currency" : "RUB"
+}
+
+<> 2021-10-26T220100.200.json
+
+###
+
+POST http://localhost:8080/stocks
+Content-Type: application/json
+
+{
+  "ticker" : "YNDX",
+  "name" : "Yandex",
+  "type" : "STOCK",
+  "figi" : "14323r23r35",
+  "currency" : "RUB"
+}
+
+<> 2021-10-26T220055.200.json
+
+###
+
+POST http://localhost:8080/stocks
+Content-Type: application/json
+
+{
+  "ticker" : "FXCN",
+  "name" : "Акции Китая",
+  "type" : "ETF",
+  "figi" : "14323r23r23r",
+  "currency" : "RUB"
+}
+
+<> 2021-10-26T220053.200.json
+
+###
+
+GET http://localhost:8080/statistic/classes/2
+
+<> 2021-10-26T204101.200.json
+
+###
+
+GET http://localhost:8080/stocks/SBSP
+
+<> 2021-10-26T204004.200.json
+
+###
+
+GET http://localhost:8080/stocks/YNDX
+
+<> 2021-10-26T203950.200.json
+
+###
+
+GET http://localhost:8080/users/2
+
+<> 2021-10-26T203912.200.json
+
+###
+
+GET http://localhost:8080/users/2
+
+<> 2021-10-26T203442.200.json
+
+###
+
+GET http://localhost:8080/statistic/classes/2
+
+<> 2021-10-26T203416.200.json
+
+###
+
+POST http://localhost:8080/stocks
+Content-Type: application/json
+
+{
+  "ticker" : "YNDX",
+  "name" : "Yandex",
+  "type" : "STOCK",
+  "figi" : "14323r23r35",
+  "currency" : "RUB"
+}
+
+<> 2021-10-26T203406.200.json
+
+###
+
+POST http://localhost:8080/users
+Content-Type: application/json
+
+{
+  "id" : "2",
+  "name" : "Victor Levin",
+  "portfolio" : [
+    {
+      "ticker" : "FXCN",
+      "quantity" : 1
+    },
+    {
+      "ticker" : "SBSP",
+      "quantity" : 1
+    },
+    {
+      "ticker" : "YNDX",
+      "quantity" : 1
+    }
+  ]
+}
+
+<> 2021-10-26T203327.200.json
+
+###
+
+GET http://localhost:8080/statistic/classes/1
+
+<> 2021-10-26T203046.200.json
+
+###
+
+GET http://localhost:8080/statistic/classes/1
+
+<> 2021-10-26T203035.200.json
+
+###
+
+GET http://localhost:8080/statistic/classes/1
+
+<> 2021-10-26T202758.404.json
+
+###
+
+GET http://localhost:8080/stat/classes/1
+
+<> 2021-10-26T202714.404.json
+
+###
+
+POST http://localhost:8080/stocks
+Content-Type: application/json
+
+{
+  "ticker" : "SBSP",
+  "name" : "Top 500 stocks of USA",
+  "type" : "ETF",
+  "figi" : "14323r23r232542",
+  "currency" : "RUB"
+}
+
+<> 2021-10-26T193605.200.json
+
+###
+
+POST http://localhost:8080/stocks
+Content-Type: application/json
+
+{
+  "ticker" : "FXCN",
+  "name" : "Акции Китая",
+  "type" : "ETF",
+  "figi" : "14323r23r23r",
+  "currency" : "RUB"
+}
+
+<> 2021-10-26T193559.200.json
+
+###
+
+GET http://localhost:8080/stocks/FXC
+
+###
+
+GET http://localhost:8080/stocks/FXCN
+
+<> 2021-10-26T184514.200.json
+
+###
+
+GET http://localhost:8080/users/1
+
+<> 2021-10-26T184510.200.json
+
+###
+
+POST http://localhost:8080/stocks
+Content-Type: application/json
+
+{
+  "ticker" : "SBSP",
+  "name" : "Top 500 stocks of USA",
+  "type" : "ETF",
+  "figi" : "14323r23r232542",
+  "currency" : "RUB"
+}
+
+<> 2021-10-26T184400.200.json
+
+###
+
+POST http://localhost:8080/stocks
+Content-Type: application/json
+
+{
+  "ticker" : "FXCN",
+  "name" : "Акции Китая",
+  "type" : "ETF",
+  "figi" : "14323r23r23r",
+  "currency" : "RUB"
+}
+
+<> 2021-10-26T184358.200.json
+
+###
+
+POST http://localhost:8080/users
+Content-Type: application/json
+
+{
+  "id" : "1",
+  "name" : "Roma Ermin",
+  "portfolio" : [
+    {
+      "ticker" : "FXCN",
+      "quantity" : 4
+    },
+    {
+      "ticker" : "SBSP",
+      "quantity" : 120
+    }
+  ]
+}
+
+<> 2021-10-26T184351.200.json
+
+###
+
+GET http://localhost:8080/stocks/FXCN
+
+<> 2021-10-26T173153.200.json
+
+###
+
+POST http://localhost:8080/users
+Content-Type: application/json
+
+{
+  "id" : "1",
+  "name" : "Roma Ermin",
+  "portfolio" : [
+    {
+      "ticker" : "FXCN",
+      "quantity" : 4
+    },
+    {
+      "ticker" : "SBSP",
+      "quantity" : 120
+    }
+  ]
+}
+
+<> 2021-10-26T173053.400.json
+
+###
+
+POST http://localhost:8080/users
+Content-Type: application/json
+
+{
+  "id" : "1",
+  "name" : "Roma Ermin",
+  "portfolio" : [
+    {
+      "ticker" : "FXCN",
+      "quantity" : 4
+    },
+    {
+      "ticker" : "SBSP",
+      "quantity" : 120
+    }
+  ]
+}
+
+<> 2021-10-26T172955.200.json
+
+###
+
+POST http://localhost:8080/stocks
+Content-Type: application/json
+
+{
+  "ticker" : "FXCN",
+  "name" : "Акции Китая",
+  "type" : "ETF",
+  "figi" : "14323r23r23r",
+  "currency" : "RUB"
+}
+
+<> 2021-10-26T172844.400.json
+
+###
+
+POST http://localhost:8080/users
+Content-Type: application/json
+
+{
+  "id" : "1",
+  "name" : "Roma Ermin",
+  "portfolio" : [
+    {
+      "ticker" : "FXCN",
+      "quantity" : 4
+    },
+    {
+      "ticker" : "SBSP",
+      "quantity" : 120
+    }
+  ]
+}
+
+<> 2021-10-26T172706.500.json
+
+###
+
+POST http://localhost:8080/users
+Content-Type: application/json
+
+{
+  "id" : "1",
+  "name" : "Roma Ermin",
+  "portfolio" : [
+    {
+      "ticker" : "FXCN",
+      "quantity" : 4
+    },
+    {
+      "ticker" : "SBSP",
+      "quantity" : 120
+    }
+  ]
+}
+
+<> 2021-10-26T172554.500.json
+
+###
+
