@@ -6,6 +6,7 @@ import com.victorlevin.StockService.domain.Type;
 import com.victorlevin.StockService.domain.User;
 import com.victorlevin.StockService.dto.ClassDto;
 import com.victorlevin.StockService.dto.ClassValue;
+import com.victorlevin.StockService.dto.GetPricesDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -25,14 +26,15 @@ public class StatisticService {
     public ClassDto getStatisticOfClassesByUserId(String userId) {
         User user  = userService.getUserById(userId);
         List<Position> positions  = user.getPortfolio();
-        Map<String, Stock> stocks = getMapStocksByTickers(positions.stream()
-                .map(Position::getTicker)
-                .collect(Collectors.toList()));
+        List<String> tickers = positions.stream().map(Position::getTicker).collect(Collectors.toList());
+
+        Map<String, Stock> stocks = getMapStocksByTickers(tickers);
+        Map<String, Double> prices = priceService.getPricesByTicker(new GetPricesDto(tickers));
 
         Map<Type, Double> valuesClasses = new HashMap<>();
 
         positions.stream().forEach(position -> {
-            Double cost = getCostByTicker(position.getTicker(), position.getQuantity());
+            Double cost = prices.get(position.getTicker()) * position.getQuantity();
             Type type = stocks.get(position.getTicker()).getType();
             if(valuesClasses.containsKey(type)) {
                 Double resultCost = valuesClasses.get(type) + cost;
@@ -52,9 +54,5 @@ public class StatisticService {
     private Map<String, Stock> getMapStocksByTickers(List<String> tickers) {
         return stockService.getStocksByTickers(tickers).stream()
                 .collect(Collectors.toMap(Stock::getTicker, i -> i));
-    }
-
-    private Double getCostByTicker(String ticker, Integer quantity) {
-        return priceService.getPriceByTicker(ticker)*quantity;
     }
 }

@@ -5,10 +5,14 @@ spring:
       port: 27018
       host: localhost
 
+api :
+  priceService : 'http://localhost:8039'
+  getPricesByTickers : /price/getByTickers
+
 logging:
   file:
     path: logs/StockService.log
   level:
-    org.springframework.data.mongodb.core: DEBUG
+    org.springframework.data.mongodb.core.MongoTemplate: DEBUG
 
 
