@@ -6,13 +6,18 @@ spring:
     mongodb:
       database: stockDB
       port: 27017
-      host: 34.88.24.200
+      host: 34.88.96.185
       username: ${mongouser}
       password: ${mongopass}
 
 api :
-  priceService : 'http://localhost:8002'
-  getPricesByTickers : /price/getByTickers
+  priceServiceConfig :
+    priceService : 'http://localhost:8002'
+    getPricesByFigies : /prices
+  tinkoffConfig :
+    tinkoffService : 'http://localhost:8003'
+    getPriceByTicker : /stocks/{ticker}
+
 
 springdoc:
   api-docs:

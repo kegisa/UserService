@@ -25,9 +25,9 @@ public class PriceService {
     }
 
 
-    public Map<String, Double> getPricesByTicker(GetPricesDto dto) {
+    public Map<String, Double> getPricesByFigies(GetPricesDto dto) {
         Map<String, Double> prices = new HashMap<>();
-        String url = config.getPriceService() + config.getGetPricesByTickers();
+        String url = config.getPriceServiceConfig().getPriceService() + config.getPriceServiceConfig().getGetPricesByFigies();
         HttpHeaders headers = new HttpHeaders();
         headers.setContentType(MediaType.APPLICATION_JSON);
         headers.setAccept(Collections.singletonList(MediaType.APPLICATION_JSON));
@@ -36,7 +36,7 @@ public class PriceService {
                 = this.restTemplate.postForEntity(url, entity, StockPricesDto.class);
 
         if(responseEntity.getStatusCode() == HttpStatus.OK) {
-            responseEntity.getBody().getPrices().forEach(i -> prices.put(i.getTicker(), i.getPrice()));
+            responseEntity.getBody().getPrices().forEach(i -> prices.put(i.getFigi(), i.getPrice()));
             return prices;
         } else {
             throw new PriceServiceException(responseEntity.toString());

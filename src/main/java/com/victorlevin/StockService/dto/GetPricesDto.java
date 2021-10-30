@@ -8,5 +8,5 @@ import java.util.List;
 @AllArgsConstructor
 @Value
 public class GetPricesDto {
-    private List<String> tickers;
+    private List<String> figies;
 }

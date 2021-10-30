@@ -9,6 +9,6 @@ import lombok.Setter;
 @Getter
 @Setter
 public class StockPriceDto {
-    private String ticker;
+    private String figi;
     private Double price;
 }

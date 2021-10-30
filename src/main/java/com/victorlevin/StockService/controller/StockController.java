@@ -22,6 +22,11 @@ public class StockController {
         return stock;
     }
 
+    @PutMapping("/{ticker}")
+    public Stock addStockFromTinkoff(@PathVariable String ticker) {
+        return stockService.addStockFromTinkoff(ticker);
+    }
+
     @PostMapping
     public StockCreateDTO createStock(@RequestBody StockCreateDTO stockDto) {
         stockService.createStock(stockDto);

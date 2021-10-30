@@ -6,15 +6,14 @@ import com.victorlevin.StockService.domain.Type;
 import com.victorlevin.StockService.domain.User;
 import com.victorlevin.StockService.dto.ClassDto;
 import com.victorlevin.StockService.dto.ClassValue;
+import com.victorlevin.StockService.dto.CostDto;
 import com.victorlevin.StockService.dto.GetPricesDto;
 import com.victorlevin.StockService.exception.CouldntGetPricesException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import javax.print.DocFlavor;
+import java.util.*;
 import java.util.stream.Collectors;
 
 @Service
@@ -23,40 +22,68 @@ public class StatisticService {
     private final UserService userService;
     private final StockService stockService;
     private final PriceService priceService;
+    private final CurrencyService currencyService;
 
     public ClassDto getStatisticOfClassesByUserId(String userId) {
-        User user  = userService.getUserById(userId);
-        List<Position> positions  = user.getPortfolio();
-        List<String> tickers = positions.stream().map(Position::getTicker).collect(Collectors.toList());
+        User user = userService.getUserById(userId);
+        Map<String, Integer> tickersWithQuantity = user.getPortfolio().stream().collect(Collectors.toMap(Position::getTicker, Position::getQuantity));
+        List<Stock> stocksInPortfolio = stockService.getStocksByTickers(
+                user.getPortfolio().stream()
+                        .map(s -> s.getTicker())
+                        .collect(Collectors.toList()));
 
-        Map<String, Stock> stocks = getMapStocksByTickers(tickers);
-        Map<String, Double> prices = priceService.getPricesByTicker(new GetPricesDto(tickers));
-
-        Map<Type, Double> valuesClasses = new HashMap<>();
-
-        if(prices.isEmpty()) {
-            throw new CouldntGetPricesException("Couldn't get prices of stocks.");
+        if(stocksInPortfolio.isEmpty()) {
+            throw new CouldntGetPricesException("User hasn't any stocks.");
         }
-        positions.stream().forEach(position -> {
-            Double cost = prices.get(position.getTicker()) * position.getQuantity();
-            Type type = stocks.get(position.getTicker()).getType();
-            if(valuesClasses.containsKey(type)) {
-                Double resultCost = valuesClasses.get(type) + cost;
-                valuesClasses.put(type, resultCost);
+
+        Map<String, Double> figiesWithPrices = priceService.getPricesByFigies(
+                new GetPricesDto(
+                        stocksInPortfolio.stream()
+                                .map(stock -> stock.getFigi())
+                                .collect(Collectors.toList())));
+
+        HashMap<Type, Double> classesWithCost = new HashMap<>();
+        stocksInPortfolio.forEach(stock -> {
+            Double cost = figiesWithPrices.get(stock.getFigi()) * tickersWithQuantity.get(stock.getTicker()) * currencyService.exchangeRate(stock.getCurrency());
+            if(!classesWithCost.containsKey(stock.getType())) {
+                classesWithCost.put(stock.getType(), cost);
             } else {
-                valuesClasses.put(type, cost);
+                Double newCost = classesWithCost.get(stock.getType()) + cost;
+                classesWithCost.put(stock.getType(), newCost);
             }
         });
 
-        Double sum = valuesClasses.values().stream().mapToDouble(Double::doubleValue).sum();
+        Double result = classesWithCost.values().stream().mapToDouble(Double::doubleValue).sum();
 
-        List<ClassValue> values = new ArrayList<>();
-        valuesClasses.forEach((k,v) -> values.add(new ClassValue(k,v/sum)));
-        return new ClassDto(userId, values);
+        List<ClassValue> classValues = new ArrayList<>();
+        classesWithCost.forEach((k,v) -> classValues.add(new ClassValue(k, v / result)));
+        return new ClassDto(userId, classValues);
     }
 
-    private Map<String, Stock> getMapStocksByTickers(List<String> tickers) {
-        return stockService.getStocksByTickers(tickers).stream()
-                .collect(Collectors.toMap(Stock::getTicker, i -> i));
+    public CostDto getCostPortfoio(String userId) {
+        User user = userService.getUserById(userId);
+        Map<String, Integer> tickersWithQuantity = user.getPortfolio().stream().collect(Collectors.toMap(Position::getTicker, Position::getQuantity));
+        List<Stock> stocksInPortfolio = stockService.getStocksByTickers(
+                user.getPortfolio().stream()
+                        .map(s -> s.getTicker())
+                        .collect(Collectors.toList()));
+
+        if (stocksInPortfolio.isEmpty()) {
+            throw new CouldntGetPricesException("User hasn't any stocks.");
+        }
+
+        Map<String, Double> figiesWithPrices = priceService.getPricesByFigies(
+                new GetPricesDto(
+                        stocksInPortfolio.stream()
+                                .map(stock -> stock.getFigi())
+                                .collect(Collectors.toList())));
+
+        Double resultCost = stocksInPortfolio.stream()
+                .map(s -> figiesWithPrices.get(s.getFigi())
+                        * tickersWithQuantity.get(s.getTicker())
+                        * currencyService.exchangeRate(s.getCurrency()))
+                .mapToDouble(Double::doubleValue).sum();
+
+        return new CostDto(resultCost);
     }
 }
