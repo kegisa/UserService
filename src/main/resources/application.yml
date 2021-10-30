@@ -9,8 +9,12 @@ spring:
       host: localhost
 
 api :
-  priceService : 'http://localhost:8039'
+  priceService : 'http://localhost:8002'
   getPricesByTickers : /price/getByTickers
+
+springdoc:
+  api-docs:
+    path: /api-docs
 
 logging:
   file:
