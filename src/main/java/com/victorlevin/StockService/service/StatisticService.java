@@ -7,6 +7,7 @@ import com.victorlevin.StockService.domain.User;
 import com.victorlevin.StockService.dto.ClassDto;
 import com.victorlevin.StockService.dto.ClassValue;
 import com.victorlevin.StockService.dto.GetPricesDto;
+import com.victorlevin.StockService.exception.CouldntGetPricesException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -33,6 +34,9 @@ public class StatisticService {
 
         Map<Type, Double> valuesClasses = new HashMap<>();
 
+        if(prices.isEmpty()) {
+            throw new CouldntGetPricesException("Couldn't get prices of stocks.");
+        }
         positions.stream().forEach(position -> {
             Double cost = prices.get(position.getTicker()) * position.getQuantity();
             Type type = stocks.get(position.getTicker()).getType();
