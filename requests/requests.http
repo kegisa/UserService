@@ -67,4 +67,78 @@ http://localhost:8080/statistic/classes/2
 DELETE http://localhost:8080/stocks/afwaf
 
 ###
-http://localhost:8080/stocks/
+POST http://localhost:8080/stocks/
+{
+  "id": "0",
+  "name": "Victor Levin",
+  "portfolio": [
+    {
+      "ticker": "TCSG",
+      "quantity": 4
+    },
+{
+      "ticker": "YNDX",
+      "quantity": 4
+    },
+{
+      "ticker": "BIIB",
+      "quantity": 1
+    },
+{
+      "ticker": "SBERP",
+      "quantity": 40
+    },
+{
+      "ticker": "AFKS",
+      "quantity": 400
+    },
+{
+      "ticker": "MOEX",
+      "quantity": 60
+    },
+{
+      "ticker": "VTBR",
+      "quantity": 190000
+    },
+{
+      "ticker": "CHMF",
+      "quantity": 5
+    },
+{
+      "ticker": "LKOH",
+      "quantity": 1
+    },
+{
+      "ticker": "SBER",
+      "quantity": 20
+    },
+{
+      "ticker": "AFLT",
+      "quantity": 100
+    },
+{
+      "ticker": "DSKY",
+      "quantity": 40
+    },
+{
+      "ticker": "TATN",
+      "quantity": 7
+    },
+{
+      "ticker": "GAZP",
+      "quantity": 10
+    },
+{
+      "ticker": "MTSS",
+      "quantity": 10
+    },
+{
+      "ticker": "FIVE",
+      "quantity": 1
+    },
+{
+      "ticker": "NLMK",
+      "quantity": 10
+    }
+  ]
+}

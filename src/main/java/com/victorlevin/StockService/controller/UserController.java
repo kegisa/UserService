@@ -14,13 +14,17 @@ public class UserController {
     private final UserService userService;
 
     @PostMapping
-    public UserDtoCreate createUser(@RequestBody UserDtoCreate userDtoCreate) {
-        userService.createUser(userDtoCreate);
-        return userDtoCreate;
+    public User createUser(@RequestBody UserDtoCreate userDtoCreate) {
+        return userService.createUser(userDtoCreate);
     }
 
     @GetMapping("/{id}")
     public User getUserById(@PathVariable String id) {
         return userService.getUserById(id);
+    }
+
+    @DeleteMapping("/{id}")
+    public void deleteUser(@PathVariable String id) {
+        userService.deleteUserById(id);
     }
 }

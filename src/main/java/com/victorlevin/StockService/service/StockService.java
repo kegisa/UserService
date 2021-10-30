@@ -1,5 +1,6 @@
 package com.victorlevin.StockService.service;
 
+import com.victorlevin.StockService.domain.Currency;
 import com.victorlevin.StockService.domain.Stock;
 import com.victorlevin.StockService.domain.Type;
 import com.victorlevin.StockService.dto.StockCreateDTO;
@@ -15,6 +16,7 @@ import java.util.List;
 @RequiredArgsConstructor
 public class StockService {
     private final StockRepository stockRepository;
+    private final TinkoffService tinkoffService;
 
     public void createStock(StockCreateDTO stockCreateDTO) {
 
@@ -24,11 +26,20 @@ public class StockService {
 
         Stock stock = new Stock(stockCreateDTO.getTicker(),
                 stockCreateDTO.getFigi(),
-                stockCreateDTO.getCurrency(),
+                Currency.valueOf(stockCreateDTO.getCurrency()),
                 stockCreateDTO.getName(),
                 Type.valueOf(stockCreateDTO.getType()));
 
         stockRepository.save(stock);
+    }
+
+    public Stock addStockFromTinkoff(String ticker) {
+        if(stockRepository.existsByTicker(ticker)) {
+            throw new StockAlreadyExistException("Stock already exit in system. Try another one.");
+        }
+
+        Stock stock = tinkoffService.getStockByTicker(ticker);
+        return stockRepository.save(stock);
     }
 
     public Stock getStockByTicker(String ticker) {
@@ -46,4 +57,5 @@ public class StockService {
     public List<Stock> getStocksByTickers(List<String> tickers) {
         return stockRepository.findByTickerIn(tickers);
     }
+
 }

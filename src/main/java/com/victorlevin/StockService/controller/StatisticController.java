@@ -1,6 +1,7 @@
 package com.victorlevin.StockService.controller;
 
 import com.victorlevin.StockService.dto.ClassDto;
+import com.victorlevin.StockService.dto.CostDto;
 import com.victorlevin.StockService.service.StatisticService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -17,5 +18,10 @@ public class StatisticController {
     @GetMapping("/classes/{userId}")
     public ClassDto getClassStat(@PathVariable String userId) {
         return statisticService.getStatisticOfClassesByUserId(userId);
+    }
+
+    @GetMapping("/cost/{userId}")
+    public CostDto getCostPortfolio(@PathVariable String userId) {
+        return statisticService.getCostPortfoio(userId);
     }
 }
