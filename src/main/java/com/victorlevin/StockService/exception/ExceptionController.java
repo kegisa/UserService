@@ -19,7 +19,7 @@ public class ExceptionController extends ResponseEntityExceptionHandler {
         return new ResponseEntity<ErrorDto>(new ErrorDto(ex.getLocalizedMessage()), HttpStatus.NOT_FOUND);
     }
 
-    @ExceptionHandler({PriceServiceException.class})
+    @ExceptionHandler({PriceServiceException.class, CouldntGetPricesException.class})
     public ResponseEntity<ErrorDto> handleExceptionFromPriceService(Exception ex) {
         return new ResponseEntity<ErrorDto>(new ErrorDto(ex.getLocalizedMessage()), HttpStatus.BAD_REQUEST);
     }
