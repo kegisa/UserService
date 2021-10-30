@@ -11,10 +11,10 @@ spring:
       password: ${mongopass}
 
 api :
-  priceServiceConfig:
+  priceServiceConfig :
     priceService : 'http://localhost:8002'
     getPricesByFigies : /prices
-  tinkoffConfig:
+  tinkoffConfig :
     tinkoffService : 'http://localhost:8003'
     getPriceByTicker : /stocks/{ticker}
 

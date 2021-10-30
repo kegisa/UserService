@@ -1,3 +1,15 @@
+GET http://localhost:8001/statistic/classes/0
+
+<> 2021-10-31T002649.500.json
+
+###
+
+GET http://localhost:8001/statistic/classes/2
+
+<> 2021-10-31T002642.404.json
+
+###
+
 GET http://localhost:8080/statistic/classes/2
 
 <> 2021-10-27T213119.200.json
@@ -357,18 +369,6 @@ Content-Type: application/json
 }
 
 <> 2021-10-26T203327.200.json
-
-###
-
-GET http://localhost:8080/statistic/classes/1
-
-<> 2021-10-26T203046.200.json
-
-###
-
-GET http://localhost:8080/statistic/classes/1
-
-<> 2021-10-26T203035.200.json
 
 ###
 
