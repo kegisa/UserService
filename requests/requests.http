@@ -58,7 +58,7 @@ Content-Type: application/json
 http://localhost:8080/stocks/SBSP
 
 ###
-http://localhost:8080/users/2
+http://localhost:8001/statistic/cost/0
 
 ###
 http://localhost:8001/statistic/classes/0

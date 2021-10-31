@@ -1,374 +1,298 @@
 GET http://localhost:8001/statistic/classes/0
 
-<> 2021-10-31T002649.500.json
+<> 2021-10-31T020034.200.json
 
 ###
 
-GET http://localhost:8001/statistic/classes/2
+GET http://localhost:8001/statistic/classes/0
 
-<> 2021-10-31T002642.404.json
-
-###
-
-GET http://localhost:8080/statistic/classes/2
-
-<> 2021-10-27T213119.200.json
+<> 2021-10-31T020030.200.json
 
 ###
 
-GET http://localhost:8080/statistic/classes/2
+GET http://localhost:8001/statistic/classes/0
 
-<> 2021-10-27T212917.200.json
-
-###
-
-GET http://localhost:8080/statistic/classes/2
-
-<> 2021-10-27T212810.200.json
+<> 2021-10-31T020016.200.json
 
 ###
 
-GET http://localhost:8080/statistic/classes/2
+GET http://localhost:8001/statistic/classes/0
 
-<> 2021-10-27T212701.200.json
-
-###
-
-GET http://localhost:8080/statistic/classes/2
+<> 2021-10-31T020011.200.json
 
 ###
 
-GET http://localhost:8080/statistic/classes/2
+GET http://localhost:8001/statistic/classes/0
 
-<> 2021-10-27T212605.200.json
-
-###
-
-GET http://localhost:8080/statistic/classes/2
-
-<> 2021-10-27T212515.400.json
+<> 2021-10-31T015944.200.json
 
 ###
 
-GET http://localhost:8080/statistic/classes/2
+GET http://localhost:8001/statistic/cost/0
 
-<> 2021-10-27T212443.400.json
-
-###
-
-GET http://localhost:8080/statistic/classes/2
-
-<> 2021-10-27T212326.500.json
+<> 2021-10-31T015916.200.json
 
 ###
 
-GET http://localhost:8080/statistic/classes/2
+GET http://localhost:8001/statistic/cost/0
 
-<> 2021-10-27T212228.500.json
-
-###
-
-GET http://localhost:8080/statistic/classes/2
-
-<> 2021-10-27T212153.500.json
+<> 2021-10-31T015913.200.json
 
 ###
 
-GET http://localhost:8080/statistic/classes/2
+GET http://localhost:8001/statistic/cost/0
 
-<> 2021-10-27T212009.500.json
-
-###
-
-GET http://localhost:8080/statistic/classes/2
-
-<> 2021-10-27T211820.500.json
+<> 2021-10-31T015903.200.json
 
 ###
 
-GET http://localhost:8080/statistic/classes/2
+GET http://localhost:8001/statistic/cost/0
 
-<> 2021-10-27T120614.200.json
-
-###
-
-GET http://localhost:8080/stocks/
-
-<> 2021-10-27T120605.200.json
+<> 2021-10-31T015901.200.json
 
 ###
 
-GET http://localhost:8080/stocks/
+GET http://localhost:8001/statistic/cost/0
 
-<> 2021-10-27T120542.200.json
-
-###
-
-GET http://localhost:8080/statistic/classes/2
-
-<> 2021-10-26T235245.200.json
+<> 2021-10-31T015832.200.json
 
 ###
 
-GET http://localhost:8080/stocks/
+GET http://localhost:8001/statistic/cost/0
 
-<> 2021-10-26T235230.200.json
-
-###
-
-GET http://localhost:8080/statistic/classes/2
-
-<> 2021-10-26T235156.200.json
+<> 2021-10-31T015711.200.json
 
 ###
 
-GET http://localhost:8080/users/2
+GET http://localhost:8001/statistic/cost/0
 
-<> 2021-10-26T235148.200.json
-
-###
-
-GET http://localhost:8080/stocks/
-
-<> 2021-10-26T235128.200.json
+<> 2021-10-31T015659.200.json
 
 ###
 
-GET http://localhost:8080/stocks/
+GET http://localhost:8001/statistic/cost/0
 
-<> 2021-10-26T235107.200.json
-
-###
-
-GET http://localhost:8080/stocks/
-
-<> 2021-10-26T235020.200.json
+<> 2021-10-31T015609.200.json
 
 ###
 
-GET http://localhost:8080/stocks/SBSP
+GET http://localhost:8001/statistic/cost/0
 
-<> 2021-10-26T235011.200.json
-
-###
-
-GET http://localhost:8080/users/2
-
-<> 2021-10-26T235002.200.json
+<> 2021-10-31T015502.200.json
 
 ###
 
-GET http://localhost:8080/stocks/
+GET http://localhost:8001/statistic/cost/0
 
-<> 2021-10-26T234942.200.json
-
-###
-
-GET http://localhost:8080/statistic/classes/2
-
-<> 2021-10-26T234930.200.json
+<> 2021-10-31T015002.200.json
 
 ###
 
-GET http://localhost:8080/stocks/
+GET http://localhost:8001/statistic/cost/0
 
-<> 2021-10-26T234835.200.json
-
-###
-
-GET http://localhost:8080/stocks/
-
-<> 2021-10-26T234730.200.json
+<> 2021-10-31T014902.200.json
 
 ###
 
-GET http://localhost:8080/users/2
+GET http://localhost:8001/statistic/cost/0
 
-<> 2021-10-26T233947.200.json
-
-###
-
-GET http://localhost:8080/statistic/classes/2
-
-<> 2021-10-26T233858.200.json
+<> 2021-10-31T014849.200.json
 
 ###
 
-GET http://localhost:8080/stocks/
+GET http://localhost:8001/statistic/cost/0
 
-<> 2021-10-26T233826.200.json
-
-###
-
-GET http://localhost:8080/stocks/
-
-<> 2021-10-26T232356.200.json
+<> 2021-10-31T010335.200.json
 
 ###
 
-GET http://localhost:8080/stocks/
+GET http://localhost:8001/statistic/cost/0
 
-<> 2021-10-26T232044.200.json
-
-###
-
-GET http://localhost:8080/stocks/
-
-<> 2021-10-26T230746.200.json
+<> 2021-10-31T010002.200.json
 
 ###
 
-GET http://localhost:8080/statistic/classes/2
+GET http://localhost:8001/statistic/classes/0
 
-<> 2021-10-26T220126.200.json
-
-###
-
-POST http://localhost:8080/users
-Content-Type: application/json
-
-{
-  "id" : "2",
-  "name" : "Victor Levin",
-  "portfolio" : [
-    {
-      "ticker" : "FXCN",
-      "quantity" : 1
-    },
-    {
-      "ticker" : "SBSP",
-      "quantity" : 1
-    },
-    {
-      "ticker" : "YNDX",
-      "quantity" : 1
-    }
-  ]
-}
-
-<> 2021-10-26T220114.200.json
+<> 2021-10-31T005725.200.json
 
 ###
 
-POST http://localhost:8080/stocks
-Content-Type: application/json
+GET http://localhost:8001/statistic/cost/0
 
-{
-  "ticker" : "SBSP",
-  "name" : "Top 500 stocks of USA",
-  "type" : "ETF",
-  "figi" : "14323r23r232542",
-  "currency" : "RUB"
-}
-
-<> 2021-10-26T220100.200.json
+<> 2021-10-31T005241.200.json
 
 ###
 
-POST http://localhost:8080/stocks
-Content-Type: application/json
+GET http://localhost:8001/statistic/cost/0
 
-{
-  "ticker" : "YNDX",
-  "name" : "Yandex",
-  "type" : "STOCK",
-  "figi" : "14323r23r35",
-  "currency" : "RUB"
-}
-
-<> 2021-10-26T220055.200.json
+<> 2021-10-31T005238.200.json
 
 ###
 
-POST http://localhost:8080/stocks
-Content-Type: application/json
+GET http://localhost:8001/statistic/cost/0
 
-{
-  "ticker" : "FXCN",
-  "name" : "Акции Китая",
-  "type" : "ETF",
-  "figi" : "14323r23r23r",
-  "currency" : "RUB"
-}
-
-<> 2021-10-26T220053.200.json
+<> 2021-10-31T005236.200.json
 
 ###
 
-GET http://localhost:8080/statistic/classes/2
+GET http://localhost:8001/statistic/cost/0
 
-<> 2021-10-26T204101.200.json
-
-###
-
-GET http://localhost:8080/stocks/SBSP
-
-<> 2021-10-26T204004.200.json
+<> 2021-10-31T005231.200.json
 
 ###
 
-GET http://localhost:8080/stocks/YNDX
+GET http://localhost:8001/statistic/cost/0
 
-<> 2021-10-26T203950.200.json
-
-###
-
-GET http://localhost:8080/users/2
-
-<> 2021-10-26T203912.200.json
+<> 2021-10-31T005221.200.json
 
 ###
 
-GET http://localhost:8080/users/2
+GET http://localhost:8001/statistic/cost/0
 
-<> 2021-10-26T203442.200.json
-
-###
-
-GET http://localhost:8080/statistic/classes/2
-
-<> 2021-10-26T203416.200.json
+<> 2021-10-31T005215.200.json
 
 ###
 
-POST http://localhost:8080/stocks
-Content-Type: application/json
+GET http://localhost:8001/statistic/cost/0
 
-{
-  "ticker" : "YNDX",
-  "name" : "Yandex",
-  "type" : "STOCK",
-  "figi" : "14323r23r35",
-  "currency" : "RUB"
-}
-
-<> 2021-10-26T203406.200.json
+<> 2021-10-31T005137.200.json
 
 ###
 
-POST http://localhost:8080/users
-Content-Type: application/json
+GET http://localhost:8001/statistic/cost/0
 
-{
-  "id" : "2",
-  "name" : "Victor Levin",
-  "portfolio" : [
-    {
-      "ticker" : "FXCN",
-      "quantity" : 1
-    },
-    {
-      "ticker" : "SBSP",
-      "quantity" : 1
-    },
-    {
-      "ticker" : "YNDX",
-      "quantity" : 1
-    }
-  ]
-}
+<> 2021-10-31T004836.200.json
 
-<> 2021-10-26T203327.200.json
+###
+
+GET http://localhost:8001/statistic/cost/0
+
+<> 2021-10-31T004701.200.json
+
+###
+
+GET http://localhost:8001/statistic/cost/0
+
+<> 2021-10-31T004556.200.json
+
+###
+
+GET http://localhost:8001/statistic/cost/0
+
+<> 2021-10-31T004550.200.json
+
+###
+
+GET http://localhost:8001/statistic/cost/0
+
+<> 2021-10-31T004547.200.json
+
+###
+
+GET http://localhost:8001/statistic/cost/0
+
+<> 2021-10-31T004546.200.json
+
+###
+
+GET http://localhost:8001/statistic/cost/0
+
+<> 2021-10-31T004447.200.json
+
+###
+
+GET http://localhost:8001/statistic/cost/0
+
+<> 2021-10-31T004443.200.json
+
+###
+
+GET http://localhost:8001/statistic/cost/0
+
+<> 2021-10-31T004437.200.json
+
+###
+
+GET http://localhost:8001/statistic/cost/0
+
+<> 2021-10-31T004435.200.json
+
+###
+
+GET http://localhost:8001/statistic/cost/0
+
+<> 2021-10-31T004430.200.json
+
+###
+
+GET http://localhost:8001/statistic/cost/0
+
+<> 2021-10-31T004424.200.json
+
+###
+
+GET http://localhost:8001/statistic/cost/0
+
+<> 2021-10-31T004419.200.json
+
+###
+
+GET http://localhost:8001/statistic/cost/0
+
+<> 2021-10-31T004128.200.json
+
+###
+
+GET http://localhost:8001/statistic/cost/0
+
+<> 2021-10-31T003841.200.json
+
+###
+
+GET http://localhost:8001/statistic/cost/0
+
+<> 2021-10-31T003706.200.json
+
+###
+
+GET http://localhost:8001/statistic/cost/0
+
+<> 2021-10-31T003622.200.json
+
+###
+
+GET http://localhost:8001/statistic/cost/0
+
+<> 2021-10-31T003612.200.json
+
+###
+
+GET http://localhost:8001/statistic/cost/0
+
+<> 2021-10-31T003605.200.json
+
+###
+
+GET http://localhost:8001/statistic/cost/0
+
+<> 2021-10-31T003513.200.json
+
+###
+
+GET http://localhost:8001/statistic/cost/0
+
+<> 2021-10-31T003140.200.json
+
+###
+
+GET http://localhost:8080/statistic/cost/0
+
+###
+
+GET http://localhost:8001/statistic/classes/0
+
+<> 2021-10-31T003052.200.json
 
 ###
 

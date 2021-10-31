@@ -6,4 +6,5 @@ import lombok.Data;
 public class TinkoffConfig {
     private String tinkoffService;
     private String getPriceByTicker;
+    private String getPricesByTickers;
 }
