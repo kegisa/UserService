@@ -5,17 +5,17 @@ spring:
   data:
     mongodb:
       database: stockDB
-      port: 27017
-      host: 34.88.96.185
+      port: ${mongo-port}
+      host: ${mongo-host}
       username: ${mongouser}
       password: ${mongopass}
 
 api :
   priceServiceConfig :
-    priceService : 'http://localhost:8002'
+    priceService : ${gcp-price-service}
     getPricesByFigies : /prices
   tinkoffConfig :
-    tinkoffService : 'http://localhost:8003'
+    tinkoffService : ${gcp-tinkoff-ervice}
     getPriceByTicker : /stocks/{ticker}
     getPricesByTickers : /stocks/getStocksByTickers
 
