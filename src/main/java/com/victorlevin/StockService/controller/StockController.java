@@ -1,7 +1,8 @@
 package com.victorlevin.StockService.controller;
 
 import com.victorlevin.StockService.domain.Stock;
-import com.victorlevin.StockService.dto.StockCreateDTO;
+import com.victorlevin.StockService.dto.StockCreateDto;
+import com.victorlevin.StockService.dto.TickersDto;
 import com.victorlevin.StockService.service.StockService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -27,8 +28,13 @@ public class StockController {
         return stockService.addStockFromTinkoff(ticker);
     }
 
+    @PostMapping("addByTickersFromTinkoff")
+    public List<Stock> addStocksFromTinkoff(@RequestBody TickersDto tickers) {
+        return stockService.addStocksFromTinkoff(tickers);
+    }
+
     @PostMapping
-    public StockCreateDTO createStock(@RequestBody StockCreateDTO stockDto) {
+    public StockCreateDto createStock(@RequestBody StockCreateDto stockDto) {
         stockService.createStock(stockDto);
         return stockDto;
     }

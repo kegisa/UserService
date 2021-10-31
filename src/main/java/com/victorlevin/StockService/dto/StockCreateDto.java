@@ -5,7 +5,7 @@ import lombok.Value;
 
 @Value
 @Builder
-public class StockCreateDTO {
+public class StockCreateDto {
     private String ticker;
     private String name;
     private String type;

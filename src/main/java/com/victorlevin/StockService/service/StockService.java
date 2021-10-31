@@ -3,7 +3,9 @@ package com.victorlevin.StockService.service;
 import com.victorlevin.StockService.domain.Currency;
 import com.victorlevin.StockService.domain.Stock;
 import com.victorlevin.StockService.domain.Type;
-import com.victorlevin.StockService.dto.StockCreateDTO;
+import com.victorlevin.StockService.dto.StockCreateDto;
+import com.victorlevin.StockService.dto.StocksDto;
+import com.victorlevin.StockService.dto.TickersDto;
 import com.victorlevin.StockService.exception.StockAlreadyExistException;
 import com.victorlevin.StockService.exception.StockNotFoundException;
 import com.victorlevin.StockService.repository.StockRepository;
@@ -18,7 +20,7 @@ public class StockService {
     private final StockRepository stockRepository;
     private final TinkoffService tinkoffService;
 
-    public void createStock(StockCreateDTO stockCreateDTO) {
+    public void createStock(StockCreateDto stockCreateDTO) {
 
         if(stockRepository.existsByTicker(stockCreateDTO.getTicker())) {
             throw new StockAlreadyExistException("Stock already exist. Try another ticker.");
@@ -58,4 +60,8 @@ public class StockService {
         return stockRepository.findByTickerIn(tickers);
     }
 
+    public List<Stock> addStocksFromTinkoff(TickersDto tickers) {
+        StocksDto stocks = tinkoffService.getStocksByTickers(tickers);
+        return stockRepository.saveAll(stocks.getStocks());
+    }
 }
