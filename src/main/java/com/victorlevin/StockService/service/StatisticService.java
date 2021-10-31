@@ -10,12 +10,13 @@ import com.victorlevin.StockService.dto.CostDto;
 import com.victorlevin.StockService.dto.GetPricesDto;
 import com.victorlevin.StockService.exception.CouldntGetPricesException;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
-import javax.print.DocFlavor;
 import java.util.*;
 import java.util.stream.Collectors;
 
+@Slf4j
 @Service
 @RequiredArgsConstructor
 public class StatisticService {
@@ -25,6 +26,7 @@ public class StatisticService {
     private final CurrencyService currencyService;
 
     public ClassDto getStatisticOfClassesByUserId(String userId) {
+        long start = System.currentTimeMillis();
         User user = userService.getUserById(userId);
         Map<String, Integer> tickersWithQuantity = user.getPortfolio().stream().collect(Collectors.toMap(Position::getTicker, Position::getQuantity));
         List<Stock> stocksInPortfolio = stockService.getStocksByTickers(
@@ -57,10 +59,12 @@ public class StatisticService {
 
         List<ClassValue> classValues = new ArrayList<>();
         classesWithCost.forEach((k,v) -> classValues.add(new ClassValue(k, v / result)));
+        log.info("Calculate time for classes stat - {}", System.currentTimeMillis() - start);
         return new ClassDto(userId, classValues);
     }
 
     public CostDto getCostPortfoio(String userId) {
+        long start = System.currentTimeMillis();
         User user = userService.getUserById(userId);
         Map<String, Integer> tickersWithQuantity = user.getPortfolio().stream().collect(Collectors.toMap(Position::getTicker, Position::getQuantity));
         List<Stock> stocksInPortfolio = stockService.getStocksByTickers(
@@ -84,6 +88,7 @@ public class StatisticService {
                         * currencyService.exchangeRate(s.getCurrency()))
                 .mapToDouble(Double::doubleValue).sum();
 
+        log.info("Calculate time for cost - {}", System.currentTimeMillis() - start);
         return new CostDto(resultCost);
     }
 }

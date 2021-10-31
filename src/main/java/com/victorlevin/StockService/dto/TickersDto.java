@@ -1,15 +1,13 @@
 package com.victorlevin.StockService.dto;
 
-import lombok.Data;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
-import java.util.List;
+import java.util.Set;
 
+@AllArgsConstructor
 @NoArgsConstructor
 @Getter
 @Setter
 public class TickersDto {
-    private List<String> tickers;
+    private Set<String> tickers;
 }

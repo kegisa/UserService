@@ -68,77 +68,145 @@ DELETE http://localhost:8080/stocks/afwaf
 
 ###
 POST http://localhost:8080/stocks/
+
+###
+PUT http://localhost:8001/users/0/stocks
+Content-Type: application/json
+
 {
-  "id": "0",
-  "name": "Victor Levin",
-  "portfolio": [
+  "positions": [
     {
-      "ticker": "TCSG",
-      "quantity": 4
-    },
-{
       "ticker": "YNDX",
       "quantity": 4
     },
-{
+    {
       "ticker": "BIIB",
       "quantity": 1
     },
-{
+    {
       "ticker": "SBERP",
       "quantity": 40
     },
-{
+    {
       "ticker": "AFKS",
       "quantity": 400
     },
-{
+    {
       "ticker": "MOEX",
       "quantity": 60
     },
-{
+    {
       "ticker": "VTBR",
       "quantity": 190000
     },
-{
+    {
       "ticker": "CHMF",
       "quantity": 5
     },
-{
+    {
       "ticker": "LKOH",
       "quantity": 1
     },
-{
+    {
       "ticker": "SBER",
       "quantity": 20
     },
-{
+    {
       "ticker": "AFLT",
       "quantity": 100
     },
-{
+    {
       "ticker": "DSKY",
       "quantity": 40
     },
-{
+    {
       "ticker": "TATN",
       "quantity": 7
     },
-{
+    {
       "ticker": "GAZP",
       "quantity": 10
     },
-{
+    {
       "ticker": "MTSS",
       "quantity": 10
     },
-{
+    {
       "ticker": "FIVE",
       "quantity": 1
     },
-{
+    {
       "ticker": "NLMK",
       "quantity": 10
+    },
+    {
+      "ticker": "TCSG",
+      "quantity": 4
+    }
+  ]
+}
+
+###
+PUT http://localhost:8001/users/0/stocks
+Content-Type: application/json
+
+{
+  "positions": [
+    {
+      "ticker": "VTBE",
+      "quantity": 652
+    }, {
+      "ticker": "FXCN",
+      "quantity": 11
+    }, {
+      "ticker": "SBSP",
+      "quantity": 19
+    }, {
+      "ticker": "FXDM",
+      "quantity": 422
+    },
+    {
+      "ticker": "FXIM",
+      "quantity": 291
+    },{
+      "ticker": "FXDE",
+      "quantity": 834
+    },{
+      "ticker": "FXIT",
+      "quantity": 1
+    },{
+      "ticker": "VTBH",
+      "quantity": 145
+    },{
+      "ticker": "VTBX",
+      "quantity": 64
+    },{
+      "ticker": "SBMX",
+      "quantity": 500
+    },{
+      "ticker": "FXKZ",
+      "quantity": 23
+    },{
+      "ticker": "FXMM",
+      "quantity": 4
+    },{
+      "ticker": "FXWO",
+      "quantity": 3496
+    },{
+      "ticker": "FXES",
+      "quantity": 76
+    },{
+      "ticker": "FXRW",
+      "quantity": 3411
+    },{
+      "ticker": "FXTB",
+      "quantity": 4
+    },{
+      "ticker": "FXRU",
+      "quantity": 2
+    },{
+      "ticker": "FXGD",
+      "quantity": 2
     }
   ]
 }
