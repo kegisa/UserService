@@ -5,17 +5,17 @@ spring:
   data:
     mongodb:
       database: stockDB
-      port: ${mongo-port}
-      host: ${mongo-host}
+      port: ${mongoport}
+      host: ${mongohost}
       username: ${mongouser}
       password: ${mongopass}
 
 api :
   priceServiceConfig :
-    priceService : ${gcp-price-service}
+    priceService : ${gcpPriceService}
     getPricesByFigies : /prices
   tinkoffConfig :
-    tinkoffService : ${gcp-tinkoff-ervice}
+    tinkoffService : ${gcpTinkoffService}
     getPriceByTicker : /stocks/{ticker}
     getPricesByTickers : /stocks/getStocksByTickers
 
@@ -25,9 +25,9 @@ springdoc:
     path: /api-docs
 
 logging:
-  file:
-    path: logs/StockService.log
   level:
     org.springframework.data.mongodb.core.MongoTemplate: DEBUG
+  file:
+    name: logs/StockService.log
 
 

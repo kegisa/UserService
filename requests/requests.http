@@ -54,14 +54,6 @@ Content-Type: application/json
   "currency" : "RUB"
 }
 
-###
-http://localhost:8080/stocks/SBSP
-
-###
-http://localhost:8001/statistic/cost/0
-
-###
-http://localhost:8001/statistic/classes/0
 
 ###
 DELETE http://localhost:8080/stocks/afwaf
@@ -125,7 +117,7 @@ Content-Type: application/json
     },
     {
       "ticker": "GAZP",
-      "quantity": 10
+      "quantity": 20
     },
     {
       "ticker": "MTSS",
@@ -154,7 +146,7 @@ Content-Type: application/json
   "positions": [
     {
       "ticker": "VTBE",
-      "quantity": 652
+      "quantity": 668
     }, {
       "ticker": "FXCN",
       "quantity": 11
@@ -207,6 +199,37 @@ Content-Type: application/json
     },{
       "ticker": "FXGD",
       "quantity": 2
+    }
+  ]
+}
+
+###
+PUT http://localhost:8001/users/0/stocks
+Content-Type: application/json
+
+{
+  "positions": [
+    {
+      "ticker": "SU26215RMFS2",
+      "quantity": 3
+    },
+{
+      "ticker": "RU000A100HE1",
+      "quantity": 6
+    },
+ {
+      "ticker": "RU000A0JXFS8",
+      "quantity": 15
+    },
+{
+      "ticker": "SU26209RMFS5",
+      "quantity": 16
+    },{
+      "ticker": "RU000A100PQ8",
+      "quantity": 19
+    },{
+      "ticker": "RU000A100238",
+      "quantity": 19
     }
   ]
 }
