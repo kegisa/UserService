@@ -6,7 +6,6 @@ import com.victorlevin.StockService.dto.PositionsDto;
 import com.victorlevin.StockService.dto.StocksDto;
 import com.victorlevin.StockService.dto.TickersDto;
 import com.victorlevin.StockService.dto.UserDtoCreate;
-import com.victorlevin.StockService.exception.StockNotFoundException;
 import com.victorlevin.StockService.exception.UserAlreadyExistException;
 import com.victorlevin.StockService.exception.UserNotFoundException;
 import com.victorlevin.StockService.repository.StockRepository;
@@ -14,9 +13,7 @@ import com.victorlevin.StockService.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
 
