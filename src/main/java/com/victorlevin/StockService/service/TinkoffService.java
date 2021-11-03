@@ -5,6 +5,7 @@ import com.victorlevin.StockService.domain.Stock;
 import com.victorlevin.StockService.dto.StocksDto;
 import com.victorlevin.StockService.dto.TickersDto;
 import com.victorlevin.StockService.exception.StockNotFoundException;
+import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.http.HttpHeaders;
@@ -20,7 +21,6 @@ import java.util.Collections;
 @Service
 public class TinkoffService {
     private final ApiConfig config;
-
     private final RestTemplate restTemplate;
 
     public TinkoffService(RestTemplateBuilder restTemplateBuilder, ApiConfig config) {

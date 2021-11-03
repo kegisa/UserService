@@ -1,9 +1,6 @@
 package com.victorlevin.StockService.service;
 
-import com.victorlevin.StockService.domain.Position;
-import com.victorlevin.StockService.domain.Stock;
-import com.victorlevin.StockService.domain.Type;
-import com.victorlevin.StockService.domain.User;
+import com.victorlevin.StockService.domain.*;
 import com.victorlevin.StockService.dto.ClassValue;
 import com.victorlevin.StockService.dto.*;
 import com.victorlevin.StockService.exception.CouldntGetPricesException;
@@ -11,6 +8,8 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
+
+import javax.sound.midi.Soundbank;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -37,10 +36,11 @@ public class StatisticService {
         }
 
         Map<String, Double> figiesWithPrices = getPricesStocks(stocksInPortfolio);
+        Map<Currency, Double> currencyRates = getRates(stocksInPortfolio);
 
-        HashMap<Type, Double> classesWithCost = new HashMap<>();
+        Map<Type, Double> classesWithCost = new HashMap<>();
         stocksInPortfolio.forEach(stock -> {
-            Double cost = figiesWithPrices.get(stock.getFigi()) * tickersWithQuantity.get(stock.getTicker()) * currencyService.exchangeRate(stock.getCurrency());
+            Double cost = figiesWithPrices.get(stock.getFigi()) * tickersWithQuantity.get(stock.getTicker()) * currencyRates.get(stock.getCurrency());
             if(!classesWithCost.containsKey(stock.getType())) {
                 classesWithCost.put(stock.getType(), cost);
             } else {
@@ -57,6 +57,7 @@ public class StatisticService {
         return new ClassesPercentDto(userId, classValues);
     }
 
+
     public CostDto getCostPortfolio(String userId) {
         long start = System.currentTimeMillis();
         User user = userService.getUserById(userId);
@@ -68,8 +69,10 @@ public class StatisticService {
         }
 
         Map<String, Double> figiesWithPrices = getPricesStocks(stocksInPortfolio);
+        Map<Currency, Double> currencyRates = getRates(stocksInPortfolio);
 
-        Double resultCost = getCostByStocks(stocksInPortfolio, figiesWithPrices, tickersWithQuantity);
+
+        Double resultCost = getCostByStocks(stocksInPortfolio, figiesWithPrices, tickersWithQuantity, currencyRates);
 
         log.info("Calculate time for cost - {}", System.currentTimeMillis() - start);
         return new CostDto(resultCost);
@@ -88,8 +91,10 @@ public class StatisticService {
         }
 
         Map<String, Double> figiesWithPrices = getPricesStocks(stocksInPortfolio);
+        Map<Currency, Double> currencyRates = getRates(stocksInPortfolio);
 
-        Double resultCost = getCostByStocks(stocksInPortfolio, figiesWithPrices, tickersWithQuantity);
+
+        Double resultCost = getCostByStocks(stocksInPortfolio, figiesWithPrices, tickersWithQuantity, currencyRates);
         return new ClassValue(type, resultCost);
     }
 
@@ -113,12 +118,19 @@ public class StatisticService {
 
     }
 
+    private Map<Currency, Double> getRates(List<Stock> stocksInPortfolio) {
+        return currencyService.getRates(
+                stocksInPortfolio.stream()
+                        .map(s -> s.getCurrency())
+                        .distinct().collect(Collectors.toList()));
+    }
+
     private Double getCostByStocks(List<Stock> stocksInPortfolio, Map<String, Double> figiesWithPrices,
-                                   Map<String, Integer> tickersWithQuantity) {
+                                   Map<String, Integer> tickersWithQuantity, Map<Currency, Double> currencyRates) {
         return stocksInPortfolio.stream()
                 .map(s -> figiesWithPrices.get(s.getFigi())
                         * tickersWithQuantity.get(s.getTicker())
-                        * currencyService.exchangeRate(s.getCurrency()))
+                        * currencyRates.get(s.getCurrency()))
                 .mapToDouble(Double::doubleValue).sum();
     }
 }

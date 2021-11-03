@@ -18,6 +18,9 @@ api :
     tinkoffService : ${gcpTinkoffService}
     getPriceByTicker : /stocks/{ticker}
     getPricesByTickers : /stocks/getStocksByTickers
+  currencyConfig :
+    currencyService: ${gcpCurrencyService}
+    getRate: /rates/{currency}
 
 
 springdoc:
@@ -26,6 +29,7 @@ springdoc:
 
 logging:
   level:
+    root : INFO
     org.springframework.data.mongodb.core.MongoTemplate: DEBUG
   file:
     name: logs/StockService.log
