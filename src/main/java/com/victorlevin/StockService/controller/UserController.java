@@ -7,6 +7,8 @@ import com.victorlevin.StockService.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 
 @RestController
 @RequiredArgsConstructor
@@ -33,4 +35,10 @@ public class UserController {
     public void deleteUser(@PathVariable String id) {
         userService.deleteUserById(id);
     }
+
+    @GetMapping
+    public List<User> getUsers() {
+        return userService.getAllUsers();
+    }
+
 }
