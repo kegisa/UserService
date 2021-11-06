@@ -33,5 +33,3 @@ logging:
     org.springframework.data.mongodb.core.MongoTemplate: DEBUG
   file:
     name: logs/StockService.log
-
-
