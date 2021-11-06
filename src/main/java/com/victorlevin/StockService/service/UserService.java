@@ -23,7 +23,7 @@ import java.util.stream.Collectors;
 public class UserService {
     private final UserRepository userRepository;
     private final StockRepository stockRepository;
-    private final TinkoffService tinkoffService;
+    private final StockApiService stockApiService;
 
     public User createUser(UserDtoCreate userDtoCreate) {
         if(userRepository.existsById(userDtoCreate.getId())) {
@@ -37,7 +37,7 @@ public class UserService {
             }
         }
 
-        StocksDto stocksDto = tinkoffService.getStocksByTickers(new TickersDto(notExistTickers));
+        StocksDto stocksDto = stockApiService.getStocksByTickers(new TickersDto(notExistTickers));
         stockRepository.saveAll(stocksDto.getStocks());
 
         return userRepository.save(new User(
@@ -58,7 +58,7 @@ public class UserService {
             TickersDto tickersDto = new TickersDto(
                     addPositions.stream().map(p -> p.getTicker()).collect(Collectors.toSet()));
 
-            StocksDto stocksDto = tinkoffService.getStocksByTickers(tickersDto);
+            StocksDto stocksDto = stockApiService.getStocksByTickers(tickersDto);
             stockRepository.saveAll(stocksDto.getStocks());
         }
 

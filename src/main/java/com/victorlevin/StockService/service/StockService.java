@@ -18,31 +18,6 @@ import java.util.List;
 @RequiredArgsConstructor
 public class StockService {
     private final StockRepository stockRepository;
-    private final TinkoffService tinkoffService;
-
-    public void createStock(StockCreateDto stockCreateDTO) {
-
-        if(stockRepository.existsByTicker(stockCreateDTO.getTicker())) {
-            throw new StockAlreadyExistException("Stock already exist. Try another ticker.");
-        }
-
-        Stock stock = new Stock(stockCreateDTO.getTicker(),
-                stockCreateDTO.getFigi(),
-                Currency.valueOf(stockCreateDTO.getCurrency()),
-                stockCreateDTO.getName(),
-                Type.valueOf(stockCreateDTO.getType()));
-
-        stockRepository.save(stock);
-    }
-
-    public Stock addStockFromTinkoff(String ticker) {
-        if(stockRepository.existsByTicker(ticker)) {
-            throw new StockAlreadyExistException("Stock already exit in system. Try another one.");
-        }
-
-        Stock stock = tinkoffService.getStockByTicker(ticker);
-        return stockRepository.save(stock);
-    }
 
     public Stock getStockByTicker(String ticker) {
         return stockRepository.findByTicker(ticker).orElseThrow(() -> new StockNotFoundException("Stock not found. Try another ticker."));
@@ -58,10 +33,5 @@ public class StockService {
 
     public List<Stock> getStocksByTickers(List<String> tickers) {
         return stockRepository.findByTickerIn(tickers);
-    }
-
-    public List<Stock> addStocksFromTinkoff(TickersDto tickers) {
-        StocksDto stocks = tinkoffService.getStocksByTickers(tickers);
-        return stockRepository.saveAll(stocks.getStocks());
     }
 }
