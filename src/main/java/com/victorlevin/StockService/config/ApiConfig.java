@@ -6,7 +6,7 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 @Data
 @ConfigurationProperties(prefix = "api")
 public class ApiConfig {
-    private TinkoffConfig tinkoffConfig;
+    private StockConfig stockConfig;
     private PriceConfig priceServiceConfig;
     private CurrencyConfig currencyConfig;
 }

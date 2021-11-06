@@ -23,22 +23,6 @@ public class StockController {
         return stock;
     }
 
-    @PutMapping("/{ticker}")
-    public Stock addStockFromTinkoff(@PathVariable String ticker) {
-        return stockService.addStockFromTinkoff(ticker);
-    }
-
-    @PostMapping("addByTickersFromTinkoff")
-    public List<Stock> addStocksFromTinkoff(@RequestBody TickersDto tickers) {
-        return stockService.addStocksFromTinkoff(tickers);
-    }
-
-    @PostMapping
-    public StockCreateDto createStock(@RequestBody StockCreateDto stockDto) {
-        stockService.createStock(stockDto);
-        return stockDto;
-    }
-
     @DeleteMapping("/{ticker}")
     public void deleteStockByTicker(@PathVariable String ticker) {
         stockService.deleteStockByTicker(ticker);
